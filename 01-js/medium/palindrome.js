@@ -4,6 +4,28 @@
 */
 
 function isPalindrome(str) {
+  var str = str.toLowerCase();
+  var i =0;
+  var j =str.length-1;
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  while(i<j){
+    if(!alphabet.includes(""+str.charAt(i))){
+      i++;
+      continue;
+    }
+    if(!alphabet.includes(""+str.charAt(j))){
+      j--;
+      continue;
+    }
+    if(str.charAt(i) == str.charAt(j)){
+      i++;
+      j--;
+    }
+    else{
+      return false;
+    }
+    
+  }
   return true;
 }
 
