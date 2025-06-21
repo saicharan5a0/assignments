@@ -16,6 +16,37 @@
   Once you've implemented the logic, test your code by running
 */
 
-class Calculator {}
+class Calculator {
+  
+  constructor(){
+    this.result = 0;
+  }
+  add(n){
+    this.result += n;
+  }
+  subtract(n){
+    this.result -= n;
+  }
+  multiply(n){
+    this.result *= n;
+  }
+  divide(n){
+    if(n == 0) throw new Error("divisible by 0 is undefined.")
+    this.result /= n;
+  }
+  clear(){
+    this.result =0;
+  }
+  getResult(){
+    return this.result;
+  }
+  calculate(str){
+    this.result = eval(str.trim());
+    if(!Number.isFinite(this.result)){
+      throw new Error();
+    }
+  }
+}
 
 module.exports = Calculator;
+ 
