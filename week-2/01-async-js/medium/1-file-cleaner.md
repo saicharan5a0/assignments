@@ -11,3 +11,10 @@ After the program runs, the output should be
 ```
 hello world my name is raman
 ```
+const fs = require('fs');
+
+var data =fs.readFileSync('a.txt', utf-8);
+
+let cleaned = data.replace(/\s+/g,' ').trim();
+
+fs.writeFileSync('a.txt', cleaned);

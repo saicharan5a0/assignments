@@ -6,3 +6,15 @@ Can you make it so that it updates every second, and shows time in the following
  - HH:MM::SS (Eg. 13:45:23)
 
  - HH:MM::SS AM/PM (Eg 01:45:23 PM)
+
+setInterval(()=>{
+    const date = new Date();
+    const hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2,'0');
+    const seconds = String(date.getSeconds()).padStart(2,'0');
+    const ampm = hours>=12 ? "PM": "AM';
+    hours = hours%12;
+    hours = hours ? hours: 12;
+    hours = String(hours).padStart(2,'0');
+    console.log(${hours}:${minutes}::${seconds} ${ampm});
+},1000)
